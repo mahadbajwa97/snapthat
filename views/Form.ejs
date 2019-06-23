@@ -1,0 +1,74 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        form
+        {
+            width: 30%;
+            float: left;
+            margin-left: 5%;
+        }
+    </style>
+</head>
+<body>
+<div class="hero-image"></div>
+<h2 class="Jumbotron" style="width: 100%; margin: 0;">Sign Up</h2>
+<br>
+<div class="row">
+
+
+    <form action="/addBlog" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="usr">Blog Name:</label>
+            <input type="text" class="form-control text" id="usr" name="BlogName">
+        </div>
+        <div class="form-group">
+            <label for="usr">Author name:</label>
+            <input type="text" class="form-control text" id="usr" name="AuthorName">
+        </div>
+
+        <div class="form-group">
+                <label for="About">Text:</label>
+            <textarea class="form-control text" id="Contact" name="textbox[0]"></textarea>
+        </div>//
+        <div class="form-group">
+            <label for="photo">Section Picture upload:</label>
+            <input type="file" id="photo" name="photo" >
+        </div>
+        <div id="add">
+
+        </div>
+        <button type='button' class="btn" id="addButton">add section</button>
+
+        <input type="submit" value="Submit" class="btn">
+    </form>
+    <script>
+        $(document).ready(function(){
+           var counter=1;
+            $("#addButton").click(function () {
+
+            var newTextBoxDiv = $(document.createElement('div'))
+                .attr("id", 'TextBoxDiv' + counter);
+
+            newTextBoxDiv.after().html('<label>Textbox #'+ counter + ' : </label><br>' +
+                '<textarea name="textbox[' + counter +
+                ']" class="form-control text"  id="textbox' + counter + '" value="" ></textarea>' +
+                '<div class="form-group">\n' +
+                '            <label for="photo">Section Picture upload:</label>\n' +
+                '            <input type="file" id="photo" name="photos['+ counter +']" >\n' +
+                '        </div>');
+
+            newTextBoxDiv.appendTo("#add");
+            counter++;
+        });
+        });
+
+
+    </script>
+
+</div>
+</body>
+</html>

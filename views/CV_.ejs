@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+    <h3 class="w3-bar-item"></h3>
+    <b><a href="#" class="w3-bar-item w3-button" style="margin-top: 100px">About Me:</a></b>
+    <a href="#" class="w3-bar-item w3-button"><%=CV_[0].AboutUs%></a>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:25%">
+
+    <div class="w3-container w3-teal">
+        <h1><%=CV_[0].FullName%></h1>
+        <h3><%=CV_[0].Designation%></h3>
+    </div>
+
+
+
+    <div class="w3-container">
+        <h2>Instituttion Name</h2>
+        <h3><%=CV_[0].InstituteName%></h3>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

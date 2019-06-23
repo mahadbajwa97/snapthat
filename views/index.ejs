@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+        <button onclick="window.location.href='/'">Create a blog</button>
+        <div>
+            <% Blogs.forEach(function(Blog){ %>
+
+        <hr/>
+            <a href="/blog/<%=Blog._id%>">
+            <div class="blog-card spring-fever" style="background-image: url('<%=Blog.image%>'); background-repeat: repeat">
+
+
+            <h3><%= Blog.BlogName%></h3>
+
+            <%= Blog.AuthorName%>
+            </div><!-- /.card-info -->
+        <hr />
+
+
+</a>
+<%}) %>
+
+</div>
+</div>
+</div>
+</body>
+</html>
